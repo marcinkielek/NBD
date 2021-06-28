@@ -1,0 +1,31 @@
+MongoDB shell version v3.6.3
+connecting to: mongodb://127.0.0.1:27017/nbd
+MongoDB server version: 3.6.3
+{
+	"_id" : ObjectId("60ae873d50beaeb2ef5cf788"),
+	"sex" : "Male",
+	"first_name" : "Wayne",
+	"last_name" : "Fields",
+	"job" : "Speech Pathologist",
+	"email" : "wfields0@diigo.com",
+	"location" : {
+		"city" : "Oyo",
+		"address" : {
+			"streetname" : "Beilfuss",
+			"streetnumber" : "860"
+		}
+	},
+	"description" : "vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris",
+	"height" : "152.38",
+	"weight" : "66.81",
+	"birth_date" : "1990-02-21T02:55:03Z",
+	"nationality" : "Nigeria",
+	"credit" : [
+		{
+			"type" : "switch",
+			"number" : "6759888939100098699",
+			"currency" : "COP",
+			"balance" : "5117.06"
+		}
+	]
+}
