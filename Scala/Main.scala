@@ -199,4 +199,97 @@ object Main {
 
     filteredList map (el => el.abs)
   }
+
+
+// ZADANIA Z DRUGIEJ CZĘŚCI!
+//zadanie 1
+def fun(day: String): String = day match {
+  case "Sobota" | "Niedziela"                                      => "Weekend"
+  case "Poniedziałek" | "Wtorek" | "Środa" | "Czwartek" | "Piątek" => "Praca"
+  case _                                                           => "Nie ma takiego dnia"
 }
+println(
+  "Poniedziałek oznacza " + fun("Poniedziałek")
+)
+println(
+  "Sobota to " + fun("Sobota")
+)
+println(
+  "Polska wygrywa Euro " + fun("Polska wygrywa Euro")
+)
+//zadanie 2
+class KontoBankowe(private var balance: Int = 0) {
+  def wplata(change: Int): Unit = {
+    balance += change
+  }
+  def wyplata(change: Int): Unit = {
+    balance -= change
+  }
+  def stanKonta(): Int = {
+    balance
+  }
+}
+val Konto = new KontoBankowe
+Konto.wplata(100)
+Konto.wyplata(10)
+
+println("Stan pierwszego konta " + Konto.stanKonta())
+
+//zadanie 3
+case class Osoba(var name: String, var surname: String)
+val ja = new Osoba("Marcin", "Kielek")
+val ona = new Osoba("Klaudia", "Łuszkiewicz")
+val kotjeden_traktujmy_jako_domyslnie = new Osoba("Bletka", "Null")
+val kotdrugi = new Osoba("Bandzior", "Dziorek")
+def elko(someone: Osoba): String = someone match {
+  case Osoba("Marcin", "Kielek") => s"elo byku"
+  case Osoba("Klaudia", "Łuszkiewicz")  => s"cześć klaudynka"
+  case Osoba(name, "Dziorek") =>
+    s"nie wiem czy chodzi o to w tym ćwiczeniu $name"
+  case _                              => s"hejka Blecik"
+}
+println(elko(ja))
+println(elko(ona))
+println(elko(kotjeden_traktujmy_jako_domyslnie)) //zapomnialem, ze jedno mialo byc domyslnie, a nie moge faworyzowac kotow
+println(elko(kotdrugi))
+//zadanie 4
+def task4(number: Int, fun: (Int) => Int): Int = {
+  fun(fun(fun(number)))
+
+}
+  val number = 32
+  def minusone(num: Int): Int = num - 1
+  println(task4(number, minusone))
+//zadanie 5
+case class Osoba1(val imie: String, val nazwisko: String) {
+  val podatek = 0
+}
+  trait Pracownik extends Osoba1 {
+    override val podatek: Int = 20
+    var pensja: Double = 0
+  }
+  trait Nauczyciel extends Pracownik {
+  override val podatek: Int = 10
+}
+  trait Student extends Osoba1 {
+    override val podatek: Int = 0
+  }
+  val osoba = new Osoba1("A", "A") with Student
+  println(s"Podatek studenta wynosi: ${osoba.podatek}%")
+
+  val osoba1 = new Osoba1("B", "B") with Pracownik
+  println(s"Podatek pracownika wynosi ${osoba1.podatek}%")
+
+  val osoba2 = new Osoba1("C", "C") with Nauczyciel
+  println(s"Podatek nauczyciela wynosi ${osoba2.podatek}%")
+
+  val osoba3 = new Osoba1("D", "D") with Student with Pracownik
+  println(s"Podatek pracującego studenta wynosi ${osoba3.podatek}%")
+
+  val osoba4 = new Osoba1("E", "E") with Pracownik with Student
+  println(s"Podatek studiującego pracownika wynosi ${osoba4.podatek}%")
+}
+
+
+
+
