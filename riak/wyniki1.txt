@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvo8ul5wHEUpkyWNlsHjuf4svCwA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s22786>; rel="up"
+Last-Modified: Tue, 29 Jun 2021 18:49:28 GMT
+ETag: "4Nyc2PH6pbXfNZv0E9BXI8"
+Date: Tue, 29 Jun 2021 18:49:28 GMT
+Content-Type: application/json
+Content-Length: 74
+
+{first_name:Slawomir,last_name:Peszko,height_in_cm:173,likes_booze:true}
