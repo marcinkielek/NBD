@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvo+u6NwEEUpkyWNl+PXc/xZfFgA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s22786>; rel="up"
+Last-Modified: Tue, 29 Jun 2021 18:52:42 GMT
+ETag: "4TF1ThMXlOTVZFD48BPJrT"
+Date: Tue, 29 Jun 2021 18:59:39 GMT
+Content-Type: application/json
+Content-Length: 75
+
+{first_name:Ernest,last_name:Hemingway,height_in_cm:183,likes_booze:true}
