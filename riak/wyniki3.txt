@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvo+umHcCIpTIkcfK8Oel/y2+LAA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s22786>; rel="up"
+Last-Modified: Tue, 29 Jun 2021 19:01:16 GMT
+ETag: "62nxgzOw3DGOxRL6vlSqFd"
+Date: Tue, 29 Jun 2021 19:01:16 GMT
+Content-Type: application/json
+Content-Length: 85
+
+'{first_name:Winston,last_name:Churchill,height_in_cm:168,likes_booze:true,isOK:yes}'
