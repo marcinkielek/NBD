@@ -1,3 +1,4 @@
+HTTP/1.1 200 OK
 X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvo8unl4KEUpkymNlaHrlf4svCwA=
 Vary: Accept-Encoding
 Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
