@@ -1,0 +1,11 @@
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvo8unl4KEUpkymNlaHrlf4svCwA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s22876>; rel="up"
+Last-Modified: Tue, 29 Jun 2021 19:03:30 GMT
+ETag: "7D7kGSQ0MIcWzPobg5HjCe"
+Date: Tue, 29 Jun 2021 19:03:30 GMT
+Content-Type: application/json
+Content-Length: 55
+
+'{first_name:Frank,last_name:Sinatra,likes_booze:true}'
