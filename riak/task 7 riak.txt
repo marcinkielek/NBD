@@ -1,0 +1,69 @@
+Zadanie 1:
+
+curl -i -XPUT -H “Content-Type:application/json”-d’{“first_name”:”Slawomir”,”last_name”:”Peszko”, “height_in_cm”:173,“likes_booze”:true}’ 
+http://127.0.0.1:8098/buckets/s22786/keys/slawek?returnbody=true
+
+curl -i -XPUT -H “Content-Type:application/json”-d’{“first_name”:”Ernest”,“last_name”:”Hemingway”,”height_in_cm”:183,“likes_booze”:true}’ http://127.0.0.1:8098/buckets/s22786/keys/ernest?returnbody=true
+
+curl -i -XPUT -H “Content-Type:application/json”-d’{“first_name”:”Winston”, “last_name”:”Churchill”,“height_in_cm”:168,“likes_booze”:true}’  http://127.0.0.1:8098/buckets/s22786/keys/winston?returnbody=true
+
+curl -i -XPUT -H “Content-Type:application/json” -d’{“first_name”:”Frank”, “last_name”:”Sinatra”,“height_in_cm”:171,“likes_booze”:true}’  http://127.0.0.1:8098/buckets/s22786/keys/frank?returnbody=true
+
+curl -i -XPUT -H “Content-Type:application/json” -d’{“first_name”:”Jane”, “last_name”:”Doe”,“height_in_cm”:160,“likes_booze”:false}’  http://127.0.0.1:8098/buckets/s22786/keys/jane?returnbody=true
+
+Zadanie 2:
+
+curl -i -XGET http://127.0.0.1:8098/buckets/s22786/keys/ernest?returnbody=true
+
+Zadanie 3:
+
+curl -i -XPUT -H "Content-Type: application/json" -d'{{“first_name”:”Winston”,“last_name”:”Churchill”,“height_in_cm”:168, “likes_booze”:true, “isOK”:”yes”}'  http://127.0.0.1:8098/buckets/s22786/keys/winston?returnbody=true
+
+Zadanie 4
+
+curl -i -XPUT -H "Content-Type: application/json" -d'{“first_name”:”Frank”,“last_name”:”Sinatra”,“likes_booze”:true }' http://127.0.0.1:8098/buckets/s22876/keys/frank?returnbody=true
+
+Zadanie 5
+
+curl -i -XPUT -H "Content-Type: application/json" -d'{“first_name”:”Jane”,“last_name”:”Doe”,“height_in_cm”:160,“likes_booze”:true}' http://127.0.0.1:8098/buckets/22786/keys/jane?returnbody=true
+
+
+Zadanie 6
+
+curl -i -XDELETE http://127.0.0.1:8098/buckets/s22786/keys/jane 
+Zadanie 7 
+
+curl -i -XGET  http://127.0.0.1:8098/buckets/s22786/keys/joe
+
+Zadanie 8
+
+curl -i -XPOST -H "Content-Type: application/json" -d'{"iDontKnow":true}' http://127.0.0.1:8098/buckets/s22786/keys
+
+Zadanie 9 
+
+curl -i -XGET  http://127.0.0.1:8098/buckets/s22786/keys/MvSu9m0dvWc7FUxfHj6EoUMef1d
+
+Zadanie 10
+
+curl -i -XDELETE http://127.0.0.1:8098/buckets/s22786/keys/MvSu9m0dvWc7FUxfHj6EoUMef1d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
