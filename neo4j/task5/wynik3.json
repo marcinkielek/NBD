@@ -1,0 +1,122 @@
+﻿[
+  {
+    "rezyser": {
+"identity": 108,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Tom Tykwer",
+"born": 1965
+      }
+    }
+  },
+  {
+    "rezyser": {
+"identity": 6,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Lana Wachowski",
+"born": 1965
+      }
+    }
+  },
+  {
+    "rezyser": {
+"identity": 5,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Andy Wachowski",
+"born": 1967
+      }
+    }
+  },
+  {
+    "rezyser": {
+"identity": 25,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "James Marshall",
+"born": 1967
+      }
+    }
+  },
+  {
+    "rezyser": {
+"identity": 6,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Lana Wachowski",
+"born": 1965
+      }
+    }
+  },
+  {
+    "rezyser": {
+"identity": 5,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Andy Wachowski",
+"born": 1967
+      }
+    }
+  },
+  {
+    "rezyser": {
+"identity": 6,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Lana Wachowski",
+"born": 1965
+      }
+    }
+  },
+  {
+    "rezyser": {
+"identity": 5,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Andy Wachowski",
+"born": 1967
+      }
+    }
+  },
+  {
+    "rezyser": {
+"identity": 6,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Lana Wachowski",
+"born": 1965
+      }
+    }
+  },
+  {
+    "rezyser": {
+"identity": 5,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Andy Wachowski",
+"born": 1967
+      }
+    }
+  }
+]
