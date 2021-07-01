@@ -1,0 +1,58 @@
+1)	MATCH (movie:Movie) RETURN movie
+
+2)	MATCH (hugo: Person {name: "Hugo Weaving"})-[:ACTED_IN]->(AgentSmithMovies) RETURN AgentSmithMovies
+
+3)	MATCH (hugo: Person {name: "Hugo Weaving"})-[:ACTED_IN]->(AgentSmithMovies) <-[:DIRECTED]-(rezyser) RETURN rezyser
+
+4)	MATCH (hugo:Person {name:"Hugo Weaving"})-[:ACTED_IN]->(m)<-[:ACTED_IN]-(wspAkt) RETURN wspAkt
+
+5)	MATCH (matrix:Movie {title:"The Matrix"})<-[:ACTED_IN]-(actors)-[:ACTED_IN]->(filmy) RETURN filmy
+
+6)	MATCH (actors:Person)-[r:ACTED_IN]->(movie) WITH actors, count(r) AS filmy RETURN actors, filmy
+
+7)	MATCH (p:Person)-[:WROTE]->(m:Movie) WITH p, m MATCH (p)-[:DIRECTED]->(m) RETURN p,m
+
+8)	MATCH (hugo: Person {name: "Hugo Weaving"})-[:ACTED_IN]->(film)<-[:ACTED_IN]-(keanu: Person {name: "Keanu Reeves"}) RETURN film
+
+9)	CREATE (KapitanAmeryczka:Movie {title: "Captain America: The First Avenger", released: 2011, tagline: "he will be an x-men o r something, I don't know this dc universe sorry"})
+
+
+CREATE (CA:Person {name: "Chris Evans", born: 1981 })
+CREATE (Bucky:Person {name: "Sebastian Stan", born: 1982 })
+CREATE (R:Person {name: "Joe Johnston", born: 1950 })
+CREATE (S:Person {name: "Stephen McFeely", born: 1969 })
+CREATE (SC:Person {name: "Christopher Markus", born: 1970 })
+
+CREATE
+
+(CA)-[:ACTED_IN {roles:['Steve Rogers']}]->(KapitanAmeryczka),
+
+(Bucky)-[:ACTED_IN {roles:['James Buchanan \'Bucky\' Barnes']}]->(KapitanAmeryczka),
+
+(R)-[:DIRECTED]->(KapitanAmeryczka),
+
+(S)-[:WROTE]->( KapitanAmeryczka),
+
+(SC)-[:WROTE]->(KapitanAmeryczka)
+
+MATCH (movie:Movie),(person:Person)
+WHERE movie.title = "Captain America: The First Avenger" AND person.name = "Chris Evans"
+CREATE (person)-[r:ACTED_IN]->(movie)
+
+MATCH (movie:Movie),(person:Person)
+WHERE movie.title = "Captain America: The First Avenger" AND person.name = "Sebastian Stan"
+CREATE (person)-[r:ACTED_IN]->(movie)
+
+MATCH (movie:Movie),(person:Person)
+WHERE movie.title = "Captain America: The First Avenger" AND person.name = "Joe Johnston"
+CREATE (person)-[r:DIRECTED]->(movie)
+
+MATCH (movie:Movie),(person:Person)
+WHERE movie.title = "Captain America: The First Avenger" AND person.name = "Stephen McFeely"
+CREATE (person)-[r:WROTE]->(movie)
+
+MATCH (movie:Movie),(person:Person)
+WHERE movie.title = "Captain America: The First Avenger" AND person.name = "Christopher Markus"
+CREATE (person)-[r:WROTE]->(movie)
+
+MATCH (movie:Movie {title: "Captain America: The First Avenger"}) RETURN movie
