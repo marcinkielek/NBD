@@ -1,0 +1,46 @@
+1) MATCH (source:town {name: "Darjeeling"}), (target:peak {name: "Sandakphu"}) MATCH p = allShortestPaths((source)-[*]->(target)) RETURN p
+
+2) MATCH p=shortestPath((darj {name:"Darjeeling"})-[*]->(sand {name:"Sandakphu"})) WHERE ALL (x IN RELATIONSHIPS(p) WHERE x.winter = "true") RETURN p
+
+3) MATCH p = (source:town {name: "Darjeeling"})-[r*]->(target:peak {name: "Sandakphu"})
+UNWIND r as rel
+WITH p, COLLECT(rel.distance) AS distances
+WITH p, reduce(acc = 0, d in distances | acc + d) as distance
+RETURN p, distance
+ORDER BY distance ASC
+
+MATCH p = (source:town {name: "Darjeeling"})-[r:twowheeler*]->(target)
+WHERE ALL (r IN relationships(p) WHERE r.summer = "true")
+RETURN target
+
+MATCH (f:Flight) <-[:ASSIGN]- (t:Ticket)
+WITH f, min(t.price) as minPrice
+SET f.minPrice = minPrice
+
+MATCH (f:Flight) <-[:ASSIGN]- (t:Ticket)
+WHERE t.class = 'business'
+SET f.businessPrice = t.price
+
+MATCH (o:Airport) <-[:ORIGIN]- (f:Flight) -[:DESTINATION]-> (d:Airport)
+CREATE (o) -[:FLIGHT {flightId: f.id, minPrice: f.minPrice, businessPrice: f.businessPrice}]-> (d)
+
+MATCH (f:Flight)
+REMOVE f.minPrice, f.businessPrice
+
+4) MATCH (ap:Airport) -[c]- (:Flight) return ap,count(c) ORDER BY count(c) DESC
+
+5) MATCH p = (a:Airport {name: 'LAX'}) -[:FLIGHT *1..5]-> (d:Airport)
+WHERE reduce(acc=0, flight in relationships(p) | acc + flight.minPrice) < 3000
+RETURN DISTINCT d
+
+9) MATCH (f:Flight) --> (a:Airport)
+RETURN f.airline, count(DISTINCT a) as cities
+ORDER BY cities DESC
+
+10) MATCH p = (a1:Airport)<-[r1:ORIGIN]-(f1:Flight)-[r2:DESTINATION]->(a2:Airport)<-[r3:ORIGIN]-(f2:Flight)-[r4:DESTINATION]->(a3:Airport)
+WHERE not(a1=a2) AND not(a1=a3) AND not(a2=a3)
+WITH p, REDUCE(acc = 0, n IN [x IN NODES(p) WHERE 'Flight' IN LABELS(x)] |
+  acc + [(n)<-[:ASSIGN]-(ticket {class: 'economy'}) | ticket.price][0]
+  ) as price
+RETURN p, price
+ORDER BY price asc LIMIT 1
